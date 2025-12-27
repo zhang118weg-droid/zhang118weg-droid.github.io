@@ -1,6 +1,6 @@
 import type { LanguagePronunciationMap, SoundResource } from '@/typings'
 
-export const SOUND_URL_PREFIX = REACT_APP_DEPLOY_ENV === 'pages' ? '/qwerty-learner/sounds/' : './sounds/'
+export const SOUND_URL_PREFIX = './sounds/' // 对于 username.github.io 类型的仓库，使用相对路径
 export const KEY_SOUND_URL_PREFIX = SOUND_URL_PREFIX + 'key-sound/'
 
 // will add more sound resource and add config ui in the future

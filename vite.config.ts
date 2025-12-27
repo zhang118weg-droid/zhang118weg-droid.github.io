@@ -17,7 +17,8 @@ export default defineConfig(async ({ mode }) => {
 
   return {
     // 👇 关键：设置 base 路径为你的 GitHub 仓库名
-    base: '/qwerty-learner/', // ← 请根据你的实际仓库名修改！
+    // 对于 username.github.io 类型的仓库，应该使用根路径 '/'
+    base: '/',
 
     plugins: [
       react({ babel: { plugins: [jotaiDebugLabel, jotaiReactRefresh] } }),

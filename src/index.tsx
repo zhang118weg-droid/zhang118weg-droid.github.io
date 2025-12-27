@@ -49,7 +49,7 @@ function Root() {
 
   return (
     <React.StrictMode>
-      <BrowserRouter basename={REACT_APP_DEPLOY_ENV === 'pages' ? '/qwerty-learner' : ''}>
+      <BrowserRouter basename=""> {/* 对于 username.github.io 类型的仓库，使用根路径 */}
         <Suspense fallback={<Loading />}>
           <Routes>
             {isMobile ? (
