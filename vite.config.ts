@@ -14,7 +14,11 @@ export default defineConfig(async ({ mode }) => {
   const latestCommitHash = await new Promise<string>((resolve) => {
     return getLastCommit((err, commit) => (err ? 'unknown' : resolve(commit.shortHash)))
   })
+
   return {
+    // 👇 关键：设置 base 路径为你的 GitHub 仓库名
+    base: '/qwerty-learner/', // ← 请根据你的实际仓库名修改！
+
     plugins: [
       react({ babel: { plugins: [jotaiDebugLabel, jotaiReactRefresh] } }),
       visualizer() as PluginOption,
@@ -30,7 +34,7 @@ export default defineConfig(async ({ mode }) => {
     ],
     build: {
       minify: true,
-      outDir: 'build',
+      outDir: 'build', // 👈 你用的是 'build'，不是默认的 'dist'
       sourcemap: false,
     },
     esbuild: {
